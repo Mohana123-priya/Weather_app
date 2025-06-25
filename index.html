@@ -3,27 +3,16 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Weather App</title>
+    <title>Responsive Weather App</title>
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <h1>Simple Weather App</h1>
-    <input type="text" id="city" placeholder="Enter city name" />
-    <button onclick="getWeather()">Check Weather</button>
-    <p id="result"></p>
-
-    <script>
-      async function getWeather() {
-        const city = document.getElementById("city").value;
-        const apiKey = "6e42fd69b881d8a42efb79805ae89620";
-        const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`);
-        const data = await response.json();
-        if (data.main) {
-          document.getElementById("result").innerText =
-            `Temperature in ${city}: ${data.main.temp}°C`;
-        } else {
-          document.getElementById("result").innerText = "City found!";
-        }
-      }
-    </script>
+    <div class="weather-app">
+      <h1>Check the Weather</h1>
+      <input type="text" id="city" placeholder="Enter city name" />
+      <button onclick="getWeather()">Check Weather</button>
+      <p id="result"></p>
+    </div>
+    <script src="script.js"></script>
   </body>
 </html>
